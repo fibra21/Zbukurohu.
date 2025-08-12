@@ -2,6 +2,8 @@ import { Button } from "./ui/button";
 import { Badge } from "./ui/badge";
 import { Input } from "./ui/input";
 import type { AppView } from "./types";
+import { useTheme } from "./theme/ThemeProvider";
+import { Moon, Sun } from "lucide-react";
 
 interface NavigationProps {
   currentView: AppView;
@@ -10,6 +12,7 @@ interface NavigationProps {
 }
 
 export function Navigation({ currentView, onNavigate, onLogout }: NavigationProps) {
+  const { theme, toggle } = useTheme();
   return (
     <nav className="bg-white shadow-sm border-b sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -28,6 +31,9 @@ export function Navigation({ currentView, onNavigate, onLogout }: NavigationProp
               <Input placeholder="Kërko produkte..." className="w-72" />
             </div>
             <Badge variant="secondary">🇽🇰 Kosovo</Badge>
+            <Button variant="ghost" aria-label="Toggle theme" onClick={toggle}>
+              {theme === 'dark' ? <Sun className="w-4 h-4"/> : <Moon className="w-4 h-4"/>}
+            </Button>
             <div className="hidden md:flex items-center space-x-2">
               <Button
                 variant="outline"
