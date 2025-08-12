@@ -1,21 +1,12 @@
 import { NavLink, Outlet } from 'react-router-dom'
 import { Button } from '../../ui/button'
 import { Moon, Sun, Bell, BarChart3, LayoutDashboard, ShoppingBag, Users, LineChart, Settings } from 'lucide-react'
-import { useEffect, useState } from 'react'
+// no local state needed here
+import { useTheme } from '../../theme/ThemeProvider'
 
 function useDarkMode() {
-  const [enabled, setEnabled] = useState<boolean>(() => localStorage.getItem('theme') === 'dark')
-  useEffect(() => {
-    const root = document.documentElement
-    if (enabled) {
-      root.classList.add('dark')
-      localStorage.setItem('theme', 'dark')
-    } else {
-      root.classList.remove('dark')
-      localStorage.setItem('theme', 'light')
-    }
-  }, [enabled])
-  return { enabled, toggle: () => setEnabled((v) => !v) }
+  const { theme, toggle } = useTheme()
+  return { enabled: theme === 'dark', toggle }
 }
 
 interface AdminLayoutProps { onLogout: () => void }
