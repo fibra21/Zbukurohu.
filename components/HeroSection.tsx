@@ -8,7 +8,7 @@ interface HeroSectionProps {
 
 export function HeroSection({ onNavigate }: HeroSectionProps) {
   return (
-    <div className="relative overflow-hidden bg-gradient-to-br from-blue-50 via-slate-50 to-gray-50 py-20 px-6">
+    <div className="relative overflow-hidden bg-gradient-to-br from-blue-50 via-slate-50 to-gray-50 dark:from-slate-900 dark:via-slate-950 dark:to-black py-20 px-6">
       {/* Background decorative elements */}
       <div className="absolute inset-0 opacity-20">
         <div className="absolute top-10 left-10 w-32 h-32 rounded-full bg-gradient-to-r from-blue-300 to-cyan-300 blur-xl"></div>

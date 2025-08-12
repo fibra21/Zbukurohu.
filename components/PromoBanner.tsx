@@ -9,7 +9,7 @@ interface PromoBannerProps {
 
 export function PromoBanner({ onNavigate }: PromoBannerProps) {
   return (
-    <div className="py-16 px-6 bg-gradient-to-r from-blue-600 via-slate-700 to-gray-800 relative overflow-hidden">
+    <div className="py-16 px-6 bg-gradient-to-r from-blue-600 via-slate-700 to-gray-800 dark:from-slate-800 dark:via-slate-900 dark:to-black relative overflow-hidden">
       {/* Decorative icons */}
       <div className="absolute inset-0 opacity-10">
         <Store className="absolute top-8 left-12 w-8 h-8 animate-pulse" />

@@ -1,5 +1,5 @@
 import { Button } from "./ui/button";
-import { Badge } from "./ui/badge";
+// import { Badge } from "./ui/badge";
 import { Input } from "./ui/input";
 import type { AppView } from "./types";
 import { useTheme } from "./theme/ThemeProvider";
@@ -14,7 +14,7 @@ interface NavigationProps {
 export function Navigation({ currentView, onNavigate, onLogout }: NavigationProps) {
   const { theme, toggle } = useTheme();
   return (
-    <nav className="bg-white shadow-sm border-b sticky top-0 z-50">
+    <nav className="bg-background shadow-sm border-b sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
           <div className="flex items-center space-x-8">
@@ -30,7 +30,7 @@ export function Navigation({ currentView, onNavigate, onLogout }: NavigationProp
             <div className="hidden md:block">
               <Input placeholder="Kërko produkte..." className="w-72" />
             </div>
-            <Badge variant="secondary">🇽🇰 Kosovo</Badge>
+            {/* Removed country badge per request */}
             <Button variant="ghost" aria-label="Toggle theme" onClick={toggle}>
               {theme === 'dark' ? <Sun className="w-4 h-4"/> : <Moon className="w-4 h-4"/>}
             </Button>

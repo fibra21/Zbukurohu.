@@ -85,7 +85,7 @@ const products: Product[] = [
 
 export function ProductShowcase({ onProductClick }: ProductShowcaseProps) {
   return (
-    <div className="py-20 px-6 bg-white">
+    <div className="py-20 px-6 bg-white dark:bg-slate-950">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl mb-4 text-gray-900">Produkte të Veçuara</h2>
