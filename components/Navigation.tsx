@@ -1,12 +1,11 @@
 import { Button } from "./ui/button";
 import { Badge } from "./ui/badge";
 import { Input } from "./ui/input";
-
-type AppView = 'home' | 'login' | 'register' | 'business-dashboard' | 'customer-marketplace';
+import type { AppView } from "./types";
 
 interface NavigationProps {
-  currentView: AppView | string;
-  onNavigate: (view: AppView | string) => void;
+  currentView: AppView;
+  onNavigate: (view: AppView) => void;
   onLogout?: () => void;
 }
 

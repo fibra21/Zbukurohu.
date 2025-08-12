@@ -1,6 +1,4 @@
 import { useState } from "react";
-import { LoginForm } from "./auth/LoginForm";
-import { RegisterForm } from "./auth/RegisterForm";
 import { AuthPage } from "./auth/AuthPage";
 import { BusinessDashboard } from "./dashboard/BusinessDashboard";
 import { CustomerMarketplace } from "./marketplace/CustomerMarketplace";
@@ -12,7 +10,7 @@ import { Navigation } from "./Navigation";
 import { DebugPanel } from "./DebugPanel";
 import { ProductDetail } from "./ProductDetail";
 
-type AppView = 'home' | 'login' | 'register' | 'business-dashboard' | 'customer-marketplace' | 'product-detail';
+import type { AppView } from "./types";
 
 interface User {
   id: string;
@@ -26,7 +24,7 @@ interface User {
 export function AppRouter() {
   const [currentView, setCurrentView] = useState<AppView>('home');
   const [currentUser, setCurrentUser] = useState<User | null>(null);
-  const [selectedProduct, setSelectedProduct] = useState<any | null>(null);
+  const [selectedProduct, setSelectedProduct] = useState<import('./ProductShowcase').Product | null>(null);
 
   const handleLogin = (userType: 'business' | 'personal', credentials: any) => {
     const user: User = {

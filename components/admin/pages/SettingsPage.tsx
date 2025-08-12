@@ -5,7 +5,7 @@ import { Button } from '../../ui/button'
 export function SettingsPage() {
   const [name, setName] = useState('Zbukurohu Shop')
   const [email, setEmail] = useState('shop@example.com')
-  const [password, setPassword] = useState('')
+  // const [password, setPassword] = useState('')
 
   return (
     <div className="space-y-6">

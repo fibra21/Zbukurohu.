@@ -1,13 +1,11 @@
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 import { Badge } from "./ui/badge";
 
-type AppView = 'home' | 'login' | 'register' | 'business-dashboard' | 'customer-marketplace';
-
 interface ProductShowcaseProps {
   onProductClick?: (product: Product) => void;
 }
 
-interface Product {
+export interface Product {
   id: number;
   name: string;
   category: string;

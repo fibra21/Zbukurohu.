@@ -1,13 +1,12 @@
 import { useState } from "react";
 import { Button } from "./ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
-
-type AppView = 'home' | 'login' | 'register' | 'business-dashboard' | 'customer-marketplace';
+import type { AppView } from "./types";
 
 interface DebugPanelProps {
-  currentView: AppView | string;
-  currentUser: any;
-  onNavigate: (view: AppView | string) => void;
+  currentView: AppView;
+  currentUser: { name: string } | null;
+  onNavigate: (view: AppView) => void;
 }
 
 export function DebugPanel({ currentView, currentUser, onNavigate }: DebugPanelProps) {
@@ -29,7 +28,7 @@ export function DebugPanel({ currentView, currentUser, onNavigate }: DebugPanelP
             <p className="text-sm text-gray-600">User: {currentUser ? currentUser.name : 'None'}</p>
           </div>
           <div className="grid grid-cols-2 gap-2">
-            {['home','login','register','customer-marketplace','business-dashboard'].map(v => (
+            {(['home','login','register','customer-marketplace','business-dashboard'] as AppView[]).map((v) => (
               <Button key={v} size="sm" variant="outline" onClick={() => onNavigate(v)}>{v}</Button>
             ))}
           </div>

@@ -1,5 +1,5 @@
-import { useEffect, useMemo, useState } from 'react'
-import { Navigate, Outlet, Route, Routes, useNavigate } from 'react-router-dom'
+import { useState } from 'react'
+import { Navigate, Outlet, Route, Routes } from 'react-router-dom'
 import { AdminLayout } from './layout/AdminLayout'
 import { DashboardPage } from './pages/DashboardPage'
 import { SalesPage } from './pages/SalesPage'
@@ -20,8 +20,8 @@ function useAuthToken() {
 }
 
 function ProtectedRoute() {
-  const { token } = useAuthToken()
-  if (!localStorage.getItem('admin_token')) {
+  const hasToken = !!localStorage.getItem('admin_token')
+  if (!hasToken) {
     return <Navigate to="/admin/login" replace />
   }
   return <Outlet />

@@ -1,4 +1,4 @@
-import { ChartContainer, ChartLegend, ChartTooltip, ChartTooltipContent } from '../../ui/chart'
+import { ChartContainer, ChartTooltip, ChartTooltipContent } from '../../ui/chart'
 import { Pie, PieChart, Cell, Bar, BarChart, CartesianGrid, XAxis, YAxis } from 'recharts'
 import { Button } from '../../ui/button'
 
